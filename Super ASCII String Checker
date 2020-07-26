@@ -1,0 +1,101 @@
+5.1 Problem Statement:-
+In the Byteland country a string "S" is said to super ascii string if and only if count of each character in the string is equal to its ascii value.
+In the Byteland country ascii code of 'a' is 1, 'b' is 2 ...'z' is 26.
+Your task is to find out whether the given string is a super ascii string or not.
+
+Input:-
+First line contains number of test cases T, followed by T lines, each containing a string "S”.
+
+Output:-
+For each test case print "Yes" if the String "S" is super ascii, else print "No"
+
+Constraints:-
+•	1<=T<=100
+•	1<=|S|<=400, S will contains only lower case alphabets
+
+Concepts Used To Solve:-
+•	Arrays: An array is a collection of data items, all of the same type, accessed using a common name. A one-dimensional array is like a list; A two dimensional array is like a table. All arrays consist of contiguous memory locations. The lowest address corresponds to the first element and the highest address to the last element.
+•	While loop: A while loop in C programming is a control flow statement that repeatedly executes a target statement as long as a given condition is true.
+
+SYNTAX:
+while(Condition)
+{
+	Statement(s);
+}
+•	For loop: : A for loop in C programming is a control flow statement for specifying iteration, which allows code to be excuted repeatedly a specific number of times.
+SYNTAX:
+for(init;Condition;increment/decrement)
+{
+	Statement(s);
+}
+•	if-else statement: If condition evaluates to true, the then-statement runs. If condition is false,the else-statement runs.
+SYNTAX:
+if (condition)
+           {
+           		then-statement(s);
+           }
+           else
+          {
+           		else-statement(s);
+           }
+
+•	ASCII: ASCII is the acronym for the American Standard Code for Information Interchange. It is a code for representing 128 English characters as numbers,with each letter assigned a number from 0 to 127.
+
+
+
+
+
+
+Sample Input and Output:-
+
+SNo.
+Input
+Output
+2
+bba
+scca
+	
+
+Yes
+No
+
+coding
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+ int a[26]={0},i,k,t,c,i1=0,c1[30];
+ char s[50];
+ scanf("%d",&t);
+ while(t--)
+ {
+  scanf("%s",&s);
+  for(i=0;i<strlen(s);i++)
+  {
+   k=(int)s[i]-97;//-a
+   a[k]++;
+  }
+  for(i=0;i<26;i++)
+  {
+   if(a[i]==i+1||a[i]==0)
+    c=1;
+   else
+   {
+    c=0;
+    break;
+   }
+  }
+  if(c==1)
+   c1[i1++]=c;
+  else
+   c1[i1++]=c;
+ }
+    for(i=0;i<i1;i++)
+        if(c1[i]==1)
+            printf("Yes\n");
+        else
+            printf("No\n");
+    return 0;
+}
+
+
